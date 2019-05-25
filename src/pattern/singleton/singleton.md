@@ -9,8 +9,8 @@
 ## Thread safe 생성 기법
 > 보통 Singleton 객체를 얻는 static 메서드는 getInstance()로 작명하는 게 일반적이다.
 
-### DCL ( Double Checked Locking )
-    > 일명 DCL이라고 불리는 이 기법은 현재 broken 이디엄이고 사용을 권고하지 않지만 이러한 기법이 있었다는 것만 알고 넘어 가자.
+### 1. DCL ( Double Checked Locking )
+> 일명 DCL이라고 불리는 이 기법은 현재 broken 이디엄이고 사용을 권고하지 않지만 이러한 기법이 있었다는 것만 알고 넘어 가자.
 ```java
     public class Singleton {
         private volatile static Singleton instance;
@@ -39,8 +39,8 @@ Thread A와 Thread B가 있다고 하자.
 Thread A가 instance의 생성을 완료하기 전에 메모리 공간에 할당이 가능하기 때문에 Thread B가 할당된 것을 보고 instance를 사용하려고 하나 생성과정이 모두 끝난 상태가 아니기 때문에 오동작할 수 있다는 것이다. 
 물론 이러할 확률은 적겠지만 혹시 모를 문제를 생각하여 쓰지 않는 것이 좋다.
       
-### Enum
-    > 간단하게 Class가 아닌 Enum으로 정의하는 것으로 Java에 지대한 공헌을 한 Joshua Bloch가 언급한 이디엄이다.
+### 2. Enum
+> 간단하게 Class가 아닌 Enum으로 정의하는 것으로 Java에 지대한 공헌을 한 Joshua Bloch가 언급한 이디엄이다.
 
 ```java
     public enum Singleton {
@@ -53,8 +53,8 @@ Thread A가 instance의 생성을 완료하기 전에 메모리 공간에 할당
 `Enum`의 초기화는 컴파일 타임에 결정이 되므로 매번 메서드 등을 호출할 때 `Context` 정보를 넘겨야 하는 비효율적인 상황이 발생할 수 있다. 
 결론은 `Enum`은 효율적인 이디엄이지만 상황에 따라 사용이 어려울 수도 있다는 점이다.
 
-### LazyHolder
-    > synchronized도 필요 없고 Java 버전도 상관없고 성능도 뛰어나 현재까지 가장 완벽하다고 평가받는 이디엄이다.
+### 3. LazyHolder
+> synchronized도 필요 없고 Java 버전도 상관없고 성능도 뛰어나 현재까지 가장 완벽하다고 평가받는 이디엄이다.
 
 ```java
     public class Singleton {
