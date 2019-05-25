@@ -4,7 +4,7 @@
 
 <img src="../img/singleton_pattern_uml_diagram.jpg" width="250" height="500" />
 
-    * Single Thread에서 사용되는 경우에는 문제가 되지 않지만 Multi Thread 환경에서 Singleton 객체에 접근 시 초기화 관련하여 문제가 발생한다.
+    Single Thread에서 사용되는 경우에는 문제가 되지 않지만 Multi Thread 환경에서 Singleton 객체에 접근 시 초기화 관련하여 문제가 발생한다.
 
 ## Thread safe 생성 기법
 > 보통 Singleton 객체를 얻는 static 메서드는 getInstance()로 작명하는 게 일반적이다.
@@ -40,7 +40,7 @@ Thread A가 instance의 생성을 완료하기 전에 메모리 공간에 할당
 물론 이러할 확률은 적겠지만 혹시 모를 문제를 생각하여 쓰지 않는 것이 좋다.
       
 * Enum
-    > 간단하게 class가 아닌 enum으로 정의하는 것으로 Java에 지대한 공헌을 한 Joshua Bloch가 언급한 이디엄이다.
+    > 간단하게 Class가 아닌 Enum으로 정의하는 것으로 Java에 지대한 공헌을 한 Joshua Bloch가 언급한 이디엄이다.
 
 ```java
     public enum Singleton {
