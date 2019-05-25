@@ -40,7 +40,7 @@ Thread A가 instance의 생성을 완료하기 전에 메모리 공간에 할당
 물론 이러할 확률은 적겠지만 혹시 모를 문제를 생각하여 쓰지 않는 것이 좋다.
       
 * Enum
-> 간단하게 class가 아닌 enum으로 정의하는 것으로 Java에 지대한 공헌을 한 Joshua Bloch가 언급한 이디엄이다.
+    > 간단하게 class가 아닌 enum으로 정의하는 것으로 Java에 지대한 공헌을 한 Joshua Bloch가 언급한 이디엄이다.
 
 ```java
     public enum Singleton {
@@ -54,7 +54,7 @@ Thread A가 instance의 생성을 완료하기 전에 메모리 공간에 할당
 결론은 `Enum`은 효율적인 이디엄이지만 상황에 따라 사용이 어려울 수도 있다는 점이다.
 
 * LazyHolder
-> synchronized도 필요 없고 Java 버전도 상관없고 성능도 뛰어나 현재까지 가장 완벽하다고 평가받는 이디엄이다.
+    > synchronized도 필요 없고 Java 버전도 상관없고 성능도 뛰어나 현재까지 가장 완벽하다고 평가받는 이디엄이다.
 
 ```java
     public class Singleton {
